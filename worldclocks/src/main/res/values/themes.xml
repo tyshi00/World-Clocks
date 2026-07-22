@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Overrides LightSdk.Theme.Splash (declared in :sdk:client) so the splash is a
+    plain black screen with no icon. This works via normal Android resource
+    merging: a style declared here, in the consuming app module, takes
+    precedence over the same-named style declared in a library dependency -
+    this is standard theming, not a workaround. (Mirrors Passatempo's
+    values/themes.xml exactly.)
+
+    windowSplashScreenAnimatedIcon points at ic_splash_blank, a solid black square
+    matching the background - see that file's own comment for why a literally
+    empty drawable doesn't work reliably. windowSplashScreenIconBackgroundColor
+    is also set to black in case the platform draws a background shape behind
+    the icon by default. windowSplashScreenAnimationDuration is set to 0 for
+    good measure, though it has no visible effect on a non-animated drawable.
+
+    Note: the ~1 second minimum splash duration itself is enforced in LightActivity.kt
+    (setKeepOnScreenCondition), which lives in :sdk:client - that's SDK-owned code,
+    not something safely overridable from the tool module. World Clocks doesn't add
+    any delay on top of that floor - Home's startup work is already fully async.
+-->
+<resources>
+    <style name="LightSdk.Theme.Splash" parent="Theme.SplashScreen">
+        <item name="windowSplashScreenBackground">@android:color/black</item>
+        <item name="windowSplashScreenAnimatedIcon">@drawable/ic_splash_blank</item>
+        <item name="windowSplashScreenIconBackgroundColor">@android:color/black</item>
+        <item name="windowSplashScreenAnimationDuration">0</item>
+        <item name="postSplashScreenTheme">@style/LightSdk.Theme</item>
+    </style>
+</resources>

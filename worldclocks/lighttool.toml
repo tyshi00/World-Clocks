@@ -1,0 +1,10 @@
+[tool]
+id = "com.tyshi00.worldclocks"
+label = "World Clocks"
+versionCode = 3
+versionName = "1.1.1"
+permissions = ["android.permission.INTERNET"]
+# Points at the actual LightOS host on a real Light Phone III.
+# Switch this back to "com.thelightphone.sdk.emulator" if you ever need to
+# test in the Android Studio emulator again instead.
+serverPackage = "com.lightos"
