@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    The Light SDK's build plugin generates AndroidManifest.xml entirely from
+    lighttool.toml and explicitly forbids a tool from providing its own
+    src/main/AndroidManifest.xml (see LightSdkPlugin.validateNoUserManifest) -
+    and its generator never declares android:icon for any tool, so the app
+    icon never shows up anywhere a normal Android launcher (or Obtainium,
+    Settings > Apps, etc.) would display one.
+
+    This file lives in the debug variant's source set instead of main, which
+    the plugin doesn't generate or validate at all - Android's standard
+    manifest merger still combines it with the generated main manifest at
+    build time, the same way any build-type-specific manifest normally
+    would. That's how the launcher icon gets declared without touching the
+    path the plugin checks for.
+
+    Mirrored at src/release/AndroidManifest.xml so a release build (if this
+    project ever adds one) gets the same icon.
+
+    Note: this was temporarily removed during troubleshooting an unrelated
+    Obtainium install failure, to rule it out as a cause. It was conclusively
+    proven not to be the cause (direct adb installs succeeded with and
+    without this file present), so it's safe to keep.
+-->
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+    <application
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round" />
+</manifest>
