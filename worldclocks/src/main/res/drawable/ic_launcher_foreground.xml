@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Wireframe globe (circle + equator + one meridian line + one meridian arc +
+    two latitude lines) with clock hands set to 18:20:17 - pairs "world" and
+    "clock" into one mark, echoing the reference illustration this tool's
+    icon is based on. All content sits inside a circle of radius 28 centered
+    at (54,54), well within the adaptive icon's 66dp/33dp-radius safe zone.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Globe outline -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2.0"
+        android:pathData="M 26,54 A 28,28 0 1,0 82,54 A 28,28 0 1,0 26,54 Z" />
+
+    <!-- Equator -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.1"
+        android:pathData="M 26,54 L 82,54" />
+
+    <!-- Two latitude lines -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.1"
+        android:pathData="M 29.751,40 L 78.249,40" />
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.1"
+        android:pathData="M 29.751,68 L 78.249,68" />
+
+    <!-- Central meridian (vertical line) -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.1"
+        android:pathData="M 54,26 L 54,82" />
+
+    <!-- One curved meridian -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.1"
+        android:pathData="M 38.6,54 A 15.4,28 0 1,0 69.4,54 A 15.4,28 0 1,0 38.6,54 Z" />
+
+    <!-- Clock hands: 18:20:17 -->
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="2.8"
+        android:strokeLineCap="round"
+        android:pathData="M 54,54 L 51.711,66.797" />
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="1.8"
+        android:strokeLineCap="round"
+        android:pathData="M 54,54 L 71.867,65.035" />
+    <path
+        android:strokeColor="#FFFFFFFF"
+        android:strokeWidth="0.9"
+        android:strokeLineCap="round"
+        android:pathData="M 54,54 L 77.476,58.990" />
+
+    <!-- Center pivot dot -->
+    <path
+        android:fillColor="#FFFFFFFF"
+        android:pathData="M 50.6,54 A 3.4,3.4 0 1,0 57.4,54 A 3.4,3.4 0 1,0 50.6,54 Z" />
+
+</vector>
