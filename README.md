@@ -40,10 +40,10 @@ A tool for the Light Phone III that shows the local time for the people you care
 
 ### From Releases
 
-Download `worldclocks-release-candidate.apk` from the [latest release](https://github.com/tyshi00/World-Clocks/releases/tag/latest) and install it over ADB:
+Download `worldclocks.apk` from the [latest release](https://github.com/tyshi00/World-Clocks/releases/tag/latest) and install it over ADB:
 
 ```
-adb install worldclocks-release-candidate.apk
+adb install worldclocks.apk
 ```
 
 A new build is published to this release on every push to `main`.
@@ -61,10 +61,10 @@ Then build and install to a connected Light Phone III:
 
 ```
 # Windows
-.\gradlew.bat :worldclocks:installDebug
+.\gradlew.bat :tool:installDebug
 
 # macOS / Linux
-./gradlew :worldclocks:installDebug
+./gradlew :tool:installDebug
 ```
 
 Package name: `com.tyshi00.worldclocks`. Tool label: "World Clocks."

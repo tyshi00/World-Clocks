@@ -35,23 +35,23 @@ jobs:
         run: chmod +x gradlew
 
       - name: Build debug APK
-        run: ./gradlew :worldclocks:assembleDebug --console=plain
+        run: ./gradlew :tool:assembleDebug --console=plain
 
       - name: Rename APK
-        run: cp worldclocks/build/outputs/apk/debug/worldclocks-debug.apk worldclocks/build/outputs/apk/debug/worldclocks-release-candidate.apk
+        run: cp tool/build/outputs/apk/debug/tool-debug.apk tool/build/outputs/apk/debug/worldclocks.apk
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
         with:
           name: worldclocks
-          path: worldclocks/build/outputs/apk/debug/worldclocks-release-candidate.apk
+          path: tool/build/outputs/apk/debug/worldclocks.apk
 
       - name: Publish GitHub Release with APK
         uses: softprops/action-gh-release@v2
         with:
           tag_name: latest
           name: Latest build
-          files: worldclocks/build/outputs/apk/debug/worldclocks-release-candidate.apk
+          files: tool/build/outputs/apk/debug/worldclocks.apk
           prerelease: false
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -1,6 +1,6 @@
 # light-sdk
 
-> Copy of the official Light SDK README. The link to `tool/` points to the Light SDK repository because this repo keeps its app in `worldclocks/` instead.
+> Copy of the official Light SDK README, kept here for reference.
 
 or: a tool for building Tools
 
